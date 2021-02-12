@@ -1,9 +1,13 @@
 import React from 'react';
+import {BrowserRouter} from "react-router-dom";
+import Routes from "./routes";
 
-function App() {
+const App = () => {
   return (
     <div>
-      Economy Simulator
+        <BrowserRouter>
+            <Routes/>
+        </BrowserRouter>
     </div>
   );
 }
