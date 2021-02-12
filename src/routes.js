@@ -6,6 +6,7 @@ import ConfigurarJogo from "./pages/ConfigurarJogo";
 import Relatorios from "./pages/Relatorios";
 import { autenticado } from "./auth";
 import NaoEncontrada from "./pages/NaoEncontrada";
+import Cadastro from "./pages/Cadastro";
 
 const PrivateRoute = ({ component: Component, ...rest}) => (
     <Route {...rest} render={ props => (
@@ -21,6 +22,7 @@ export default function Routes(){
     return(
         <Switch>
             <Route exact path={"/login"} component={Login}/>
+            <Route exact path={"/cadastro"} component={Cadastro}/>
             <PrivateRoute exact path={"/"} component={Jogo}/>
             <PrivateRoute exact path={"/configurar-jogo"} component={ConfigurarJogo}/>
             <PrivateRoute exact path={"/relatorios"} component={Relatorios}/>

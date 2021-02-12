@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Button, Form, FormGroup, Input} from "reactstrap";
-import {LoginBoxWrapper} from "./style";
+import {CadastroBoxWrapper} from "./style";
 import logo from './../../assets/img/logo-economy.png'
 
-const Login = () => {
+const Cadastro = () => {
     return (
-        <LoginBoxWrapper>
+        <CadastroBoxWrapper>
             <div className={"loginBox"}>
                 <h1>
                     <img id={"img-logo"} src={logo} alt={""}/>
@@ -15,21 +15,26 @@ const Login = () => {
                 <div className={"form-login"}>
                     <Form>
                         <FormGroup>
+                            <Input type="text" name="nome" id="nome" placeholder="Nome" />
+                        </FormGroup>
+                        <FormGroup>
                             <Input type="email" name="email" id="email" placeholder="Email" />
                         </FormGroup>
                         <FormGroup>
-                            <Input type="password" name="password" id="password" placeholder="Password" />
+                            <Input type="password" name="password" id="password" placeholder="Senha" />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input type="password" name="password_repeat" id="password_repeat" placeholder="Repita a senha" />
                         </FormGroup>
                         <Button color="primary" block>Entrar</Button>
-                        <span><a target="_blank" href="https://github.com/gwathsule/e-conomy-simulator">Github</a></span>
-                        <Link to={"/cadastro"}>
-                            <span className="pull-right">Registrar</span>
+                        <Link to={"/"}>
+                            <span className="pull-right">Já possui cadastro?</span>
                         </Link>
                     </Form>
                 </div>
             </div>
-        </LoginBoxWrapper>
+        </CadastroBoxWrapper>
     );
 }
 
-export default Login;
+export default Cadastro;
