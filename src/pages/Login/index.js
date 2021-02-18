@@ -9,6 +9,7 @@ import {LoginBoxWrapper} from "./style";
 import logo from './../../assets/img/logo-economy.png'
 import { BaseUrl } from '../../helpers/settings';
 import Notification from '../../helpers/notification'
+import {loginRequest} from '../../store/modules/login/actions'
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -23,12 +24,20 @@ const Login = () => {
 
     const handleSignin = values => {
         axios
-            .post(`${BaseUrl}/getToken`, values)
+            .get(`${BaseUrl}/getToken`, values)//todo mudar pra post
             .then(({data}) => {
-                dispatch({type: 'LOGIN_REQUEST', token: data});
+                if(data.errors) {
+                    Notification('error', 'erro ao efetuar login');
+                } else {
+                    if(data.logado) {
+                        dispatch(loginRequest(data));
+                    } else {
+                        Notification('error', 'login inválido');
+                    }
+                }
             })
-            .catch(({response}) => {
-                Notification('error', 'deu ruim');
+            .catch((e) => {
+                console.log('erro: ' + e.message);
             });
     };
 
