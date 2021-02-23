@@ -6,10 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import './index.css';
 
+/*
+    troquei o <React.StrictMode> para <React.Fragment> porquê há algumas ferramentas do Reactstrap que estão sendo
+    atualizadas ainda, e utilizando o <React.StrictMode> o console fica emitindo o aviso de código legado
+    (legacy context api has been detected within a strict-mode tree. reactstrap)
+ */
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 

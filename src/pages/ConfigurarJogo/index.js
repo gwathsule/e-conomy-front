@@ -1,6 +1,7 @@
 import React from 'react';
 import { ConfigurarJogoBoxWrapper} from "./style";
 import {Button, Form, FormGroup, Input, Label, Col, Row} from "reactstrap";
+import SeletorPersonagem from "../../components/SeletorPersonagem";
 
 const ConfigurarJogo = () => {
     return (
@@ -13,7 +14,14 @@ const ConfigurarJogo = () => {
                     </div>
                     <Form>
                         <div className={"seletor-personagem"}>
-
+                            <Row>
+                                <Col md={6}>
+                                    <SeletorPersonagem sexo={'m'}/>
+                                </Col>
+                                <Col md={6}>
+                                    <SeletorPersonagem sexo={'f'}/>
+                                </Col>
+                            </Row>
                         </div>
                         <Row className={"form-fields"} form>
                             <Col md={6}>

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const ConfigurarJogoBoxWrapper = styled.div`
-    margin-top: 10%;
+    margin-top: 5%;
     display: grid;
     justify-content: center;
     width: 100%;
@@ -11,9 +11,8 @@ export const ConfigurarJogoBoxWrapper = styled.div`
     }
     
     .seletor-personagem{
-        width: 600px;
-        height: 300px;
-        background-color: #29ABE2;
+        //width: 600px;
+        //height: 300px;
     }
     
     .configBox {
