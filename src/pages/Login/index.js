@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { useFormik } from "formik";
-import {Link} from "react-router-dom";
 import {Button, Form, FormGroup, Input} from "reactstrap";
 import {LoginBoxWrapper} from "./style";
 import logo from './../../assets/img/logo-economy.png'
