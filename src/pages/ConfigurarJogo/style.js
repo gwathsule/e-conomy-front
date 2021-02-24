@@ -11,8 +11,7 @@ export const ConfigurarJogoBoxWrapper = styled.div`
     }
     
     .seletor-personagem{
-        //width: 600px;
-        //height: 300px;
+        text-align:center
     }
     
     .configBox {

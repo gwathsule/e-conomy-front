@@ -45,10 +45,10 @@ const SeletorPersonagem = (props) => {
 
     function setIndexPersonagem(index)
     {
-        if(props.sexo == "m") {
+        if(props.sexo == "f") {
             dispatch(setPersonagemFeminino(index));
         }
-        if(props.sexo == "f") {
+        if(props.sexo == "m") {
             dispatch(setPersonagemMasculino(index));
         }
     }

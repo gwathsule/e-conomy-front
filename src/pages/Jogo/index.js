@@ -10,6 +10,7 @@ const Jogo = () => {
     const dispatch = useDispatch();
     const token = getToken();
     var jogoState = useSelector(state => state.jogo);
+    console.log(jogoState);
     useEffect(() => {
         if(jogoState.jogo === null) {
             try {
