@@ -6,14 +6,15 @@ import {clearToken, getToken} from "../../helpers/storeToken";
 import Notification from '../../helpers/notification';
 import {JogoBoxWrapper} from "./style";
 import {Col, Container, Row} from "reactstrap";
+import Perfil from "../../components/Perfil";
 
 const Jogo = () => {
     const { handleLogout } = useContext(context);
     const dispatch = useDispatch();
     const token = getToken();
-    var jogoState = useSelector(state => state.jogo);
+    var { jogo } = useSelector(state => state.jogo);
     useEffect(() => {
-        if(jogoState.jogo === null) {
+        if(jogo === null) {
             try {
                 dispatch(jogoRequest(token))
             } catch (error) {
@@ -27,10 +28,16 @@ const Jogo = () => {
             }
         }
     }, []);
-
+    if(jogo === null) {
+        return (
+            <div></div>
+        );
+    }
+    console.log(jogo);
+    const nomeMinistro = jogo.jogo.genero == 'F' ? `Ministra ${jogo.jogo.ministro}` : `Ministro ${jogo.jogo.ministro}`;
     return (
         <JogoBoxWrapper>
-            <Container fluid={true} className={"boxJogo"}>
+            <Container className={"boxJogo"}>
                 <Row >
                     <Col xs={12} className={"boxGrafico"}>
                         boxGrafico
@@ -39,7 +46,11 @@ const Jogo = () => {
 
                 <Row>
                     <Col xs={3}>
-                        <Row><div className={"boxPerfil"}>boxPerfil</div></Row>
+                        <Row>
+                            <div className={"boxPerfil"}>
+                                <Perfil titulo={nomeMinistro} srcImage={jogo.url_personagem}/>
+                            </div>
+                        </Row>
                         <Row><div className={"boxUltimoMes"}>boxUltimoMes</div></Row>
                     </Col>
                     <Col xs={6}><div className={"boxTimeline"}>boxTimeline</div></Col>
