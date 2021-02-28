@@ -27,7 +27,6 @@ export const JogoBoxWrapper = styled.div`
     }
     .boxUltimoMes{
       width: 100%;
-      height: 150px;
       background-color: #FFF;
     }
     

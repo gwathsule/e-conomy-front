@@ -8,6 +8,7 @@ import {JogoBoxWrapper} from "./style";
 import {Col, Container, Row} from "reactstrap";
 import Perfil from "../../components/Perfil";
 import PainelPopularidade from "../../components/PainelPopularidade";
+import ResultadoUltimoMes from "../../components/ResultadoUltimoMes";
 
 const Jogo = () => {
     const { handleLogout } = useContext(context);
@@ -54,7 +55,14 @@ const Jogo = () => {
                                 <Perfil titulo={nomeMinistro} srcImage={jogo.url_personagem}/>
                             </div>
                         </Row>
-                        <Row><div className={"boxUltimoMes"}>boxUltimoMes</div></Row>
+                        <Row>
+                            <div className={"boxUltimoMes"}>
+                                <ResultadoUltimoMes
+                                    titulo={"Último Mês"}
+                                    resultados={ultimaRodada}
+                                />
+                            </div>
+                        </Row>
                     </Col>
                     <Col xs={6}><div className={"boxTimeline"}>boxTimeline</div></Col>
                     <Col xs={3}>
